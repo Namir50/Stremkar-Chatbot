@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamKar Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <h1>StreamKar Assistant</h1>
+            </div>
+            <button class="admin-toggle" id="adminToggleBtn">Admin Panel</button>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-window" id="chatWindow">
+            <div class="message bot-message">
+                Hello! I am your StreamKar Assistant. How can I help you today?
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type your question here..." autocomplete="off">
+            <button class="send-btn" id="sendBtn">Send</button>
+        </div>
+
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <h2>Admin Control</h2>
+                <button class="close-sidebar" id="closeSidebar">&times;</button>
+            </div>
+
+            <div class="admin-content">
+                <!-- Login Section -->
+                <div class="login-form" id="loginForm">
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">Login to manage
+                        FAQs</p>
+                    <div class="admin-form-group">
+                        <label>Username</label>
+                        <input type="text" id="adminUsername" placeholder="Enter username">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Password</label>
+                        <input type="password" id="adminPassword" placeholder="Enter password">
+                    </div>
+                    <button class="primary-btn" id="loginBtn">Login</button>
+                    <p id="loginError" style="color: #ff4b2b; font-size: 0.8rem;" class="hidden"></p>
+                </div>
+
+                <!-- Admin Controls Section -->
+                <div class="admin-controls hidden" id="adminControls">
+                    <div class="admin-form-group">
+                        <label>New Question</label>
+                        <input type="text" id="newFaqQ" placeholder="User question">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Answer</label>
+                        <textarea id="newFaqA" placeholder="Bot answer"></textarea>
+                    </div>
+                    <button class="primary-btn" id="addFaqBtn">Add to Database</button>
+
+                    <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 20px 0;">
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3>Stored FAQs</h3>
+                        <button class="secondary-btn" style="padding: 4px 10px; font-size: 0.75rem;"
+                            id="refreshFaqBtn">Refresh</button>
+                    </div>
+                    <div class="faq-list" id="faqList">
+                        <!-- FAQs will be loaded here -->
+                    </div>
+
+                    <button class="secondary-btn" id="logoutBtn" style="margin-top: 30px;">Logout</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
